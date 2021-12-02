@@ -14,7 +14,7 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.RobotMap;
 
-public class DriveSubsystem extends SubsystemBase {
+public class DriveTrainSubsystem extends SubsystemBase {
   private static final WPI_TalonFX leftMotorBack = RobotMap.leftBackDriveMotor;
   private static final WPI_TalonFX rightMotorBack = RobotMap.rightBackDriveMotor;
   private static final WPI_TalonFX leftMotorFront = RobotMap.leftFrontDriveMotor;
@@ -39,7 +39,7 @@ public class DriveSubsystem extends SubsystemBase {
 
     
   /** Creates a new DriveSubsystem. */
-  public DriveSubsystem() {
+  public DriveTrainSubsystem() {
   
     leftMotorFront.set(ControlMode.Follower, leftMotorBack.getDeviceID());
     rightMotorFront.set(ControlMode.Follower, rightMotorBack.getDeviceID());

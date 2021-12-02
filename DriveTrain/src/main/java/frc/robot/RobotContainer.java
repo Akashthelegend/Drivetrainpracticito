@@ -8,8 +8,10 @@ import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.commands.Joystick;
-import frc.robot.subsystems.DriveSubsystem;
+import frc.robot.commands.LimelightAutoAlign;
+import frc.robot.subsystems.DriveTrainSubsystem;
 import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.subsystems.Limelight;
 import edu.wpi.first.wpilibj2.command.Command;
 
 /**
@@ -24,7 +26,9 @@ public class RobotContainer {
 
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
 
-  public static DriveSubsystem driveSubsystem = new DriveSubsystem();
+  public static DriveTrainSubsystem driveSubsystem = new DriveTrainSubsystem();
+
+  public static Limelight limelight = new Limelight();
 
   //controller
   public static XboxController driverController = new XboxController(Constants.DRIVER_CONTROLLER_PORT);
@@ -35,6 +39,10 @@ public class RobotContainer {
 
     driveSubsystem.setDefaultCommand(
       new Joystick(driveSubsystem)
+    );
+
+    limelight.setDefaultCommand(
+      new LimelightAutoAlign()
     );
   }
 

@@ -8,13 +8,13 @@ import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.RobotContainer;
-import frc.robot.subsystems.DriveSubsystem;
+import frc.robot.subsystems.DriveTrainSubsystem;
 
 public class Joystick extends CommandBase {
-  private final DriveSubsystem driveSubsystem;
+  private final DriveTrainSubsystem driveSubsystem;
   private final static XboxController driverController = RobotContainer.driverController;
   /** Creates a new Joystick. */
-  public Joystick(DriveSubsystem drivetrain) {
+  public Joystick(DriveTrainSubsystem drivetrain) {
    // Use addRequirements() here to declare subsystem dependencies.
     driveSubsystem = drivetrain;
     addRequirements(driveSubsystem);
